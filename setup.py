@@ -12,7 +12,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='ddfirmware',
-    version=dd-firmware.__version__,
+    version=ddfirmware.__version__,
     packages=find_packages(),
     python_requires='>=3.0',
     author='Travis Pawlikowski',
@@ -32,6 +32,6 @@ setup(
         'Operating System :: OS Independent'
     ],
     entry_points = {'console_scripts': [
-        'dd-firmware=dd-firmware.cli:main'],
+        'ddfirmware=ddfirmware.cli:main'],
         },
 )

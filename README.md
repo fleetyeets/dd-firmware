@@ -8,6 +8,8 @@ dd-firmware is a simple script for terminal use.  It queries dd-wrt.com for rout
 
 * python3
 
+<img src='ddfirmware_screenshot.png'>
+
 
 ## Installation
 
