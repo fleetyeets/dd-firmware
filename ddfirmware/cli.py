@@ -35,7 +35,7 @@ def date_picker(data,year):
 
 def model_picker(release):
     model = args['router']
-    pattern = re.findall('>(.+'+str(model)+'.+)/',release) #note figure out how to drop the /<
+    pattern = re.findall('>(.+'+str(model)+'.+)/',release)
     pattern.sort()
     pattern = [i.replace('/<','') for i in pattern] #yeet dis out
     print('These are the routers that match your input:')

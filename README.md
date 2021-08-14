@@ -7,6 +7,7 @@ dd-firmware is a simple script for terminal use.  It queries dd-wrt.com for rout
 ## System Requirements
 
 * python3
+* python requests package (```pip install requests```)
 
 <img src='ddfirmware_screenshot.png'>
 
@@ -24,6 +25,8 @@ To use dd-firmware:
 ```dd-firmware [router]```
 
 Example: dd-firmware r7000; uses fuzzy regex match
+
+Upon completion of user inputs; downloads the most recent firmware and names it by date of download and firmware revision, placing it in current working directory.
 
 
 ### Arguments
