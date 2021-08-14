@@ -1,8 +1,8 @@
-# dd-firmware
+# ddfirmware
 
-## What is dd-firmware?
+## What is ddfirmware?
 
-dd-firmware is a simple script for terminal use.  It queries dd-wrt.com for router firmware based on user input and writes it to the present working directory. 
+ddfirmware is a simple script for terminal use.  It queries dd-wrt.com for router firmware based on user input and writes it to the present working directory. 
 
 ## System Requirements
 
@@ -14,17 +14,17 @@ dd-firmware is a simple script for terminal use.  It queries dd-wrt.com for rout
 
 ## Installation
 
-```pip install dd-firmware```
+```pip install ddfirmware```
 
 ## Usage
 
-To use dd-firmware:
+To use ddfirmware:
 
 ### Basic / Current Day
 
-```dd-firmware [router]```
+```ddfirmware [router]```
 
-Example: dd-firmware r7000; uses fuzzy regex match
+Example: ddfirmware r7000; uses fuzzy regex match
 
 Upon completion of user inputs; downloads the most recent firmware and names it by date of download and firmware revision, placing it in current working directory.
 
