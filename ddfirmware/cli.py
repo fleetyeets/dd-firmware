@@ -3,12 +3,11 @@ import sys
 import argparse
 import datetime
 import re
+import os
 from datetime import datetime
 
 parser = argparse.ArgumentParser(description='Checks for dd-wrt firmware updates')
 parser.add_argument('router', type=str)
-parser.add_argument("-f", "--five", required=False,
-   help="Lists the past five versions of firmware.", nargs='*')
 
 args = vars(parser.parse_args())
 
@@ -22,13 +21,7 @@ def date_picker(data,year):
     url = 'https://download1.dd-wrt.com/dd-wrtv2/downloads/betas/'+str(year)+"/"
     pattern = re.findall('(\d+-\d+-\d+-\w+)',data)
     pattern.sort(reverse=True)
-    if args['five'] is None:
-        release_date = str(pattern[0])
-
-    elif args['five'] is not None:
-        print("These are the 5 most recent dates:")
-        print(*pattern[:5], sep='\n')
-        release_date = str(input('What date do you want? (hit enter for most recent)'))
+    release_date = str(pattern[0]) 
     release = url+release_date+"/"
     release_data = requests.get(release).text
     return release_data, release, release_date
@@ -60,8 +53,20 @@ def main():
     # Request specific model type
     model = model_picker(release)
 
+    # Enumerate PWD
+    path = '.'
+    files = os.listdir(path)
+    files.sort(reverse=True)
+    print('LS of current directory:')
+    print(*files, sep='\n')
+
     #get binary
     target = model+'-webflash.bin'
+    prompt = input('Download '+info+'_'+target+'? (Y/n)')
+    if prompt == 'n':
+        quit()
+    else:
+        pass
     binary = requests.get(release_url+model+"/"+target)
     open(info+'_'+target, 'wb').write(binary.content)
     print('Wrote '+info+'_'+target)

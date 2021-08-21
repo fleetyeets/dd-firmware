@@ -26,11 +26,6 @@ To use ddfirmware:
 
 Example: ddfirmware r7000; uses fuzzy regex match
 
-Upon completion of user inputs; downloads the most recent firmware and names it by date of download and firmware revision, placing it in current working directory.
-
-
-### Arguments
-
-```-f or --five```
-
-prints the last five firmware release dates and allows you to pick from within
+    * Lists all routers that match [router] and prompts user to choose
+    * Prints contents of present working directory
+    * Prompts user to confirm they wish to download available binary
